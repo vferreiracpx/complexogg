@@ -350,7 +350,6 @@
       </div>
       <div class="input-group">
         <input type="text" id="discord" placeholder="ID Discord" autocomplete="off" />
-        <input type="text" id="nomePersonagem" placeholder="Nome do Personagem (RP)" autocomplete="off" />
         <input type="text" id="entrevista" placeholder="Nº da Entrevista" autocomplete="off" />
       </div>
       <div class="input-group">
@@ -389,7 +388,6 @@
         <span style="color:#4caf50;font-weight:bold;">✅</span> Todos os dados de aprovados e reprovados de todas as entrevistas ficam salvos, mesmo que você limpe os campos visuais. Esses dados só serão apagados ao clicar em <b>"Nova Entrevista"</b>.<br><br>
         <span style="color:#ffb300;font-weight:bold;">⚠️</span> Limpar os campos visuais não apaga os dados salvos das entrevistas.<br><br>
         <span style="color:#4f8cff;font-weight:bold;">💾</span> <b>Salvar entrevista completa</b> salva todas as entrevistas acumuladas no painel geral, não apenas as informações visuais atuais.<br><br>
-        <span style="color:#ffc107;font-weight:bold;">⭐</span> <b>Atenção:</b> Lembre-se de perguntar o nome do personagem e verifique se é registrável. Caso tenha dúvida, pergunte à <span style="color:#ffc107;font-weight:bold;">Jessie</span>.<br><br>
         <span style="color:#ffe082;font-weight:bold;">ℹ️</span> Aqui está o documento que deve ser repassado para o entrevistado: <a href="https://docs.google.com/document/d/1FRO7mZaNyVMSYKPTDAvXHE1kXz14GlOz5VGh7FhR-Kg/edit?pli=1&tab=t.0" style="color: red;" target="_blank">Regras básicas.</a>
     </p>
 </div>
@@ -516,7 +514,7 @@
 
     function limparCampos(aprovacao = false) {
       if (!aprovacao && !confirm("Tem certeza que deseja limpar todos os campos?")) return;
-      ['nome', 'data', 'idade', 'discord', 'nomePersonagem', 'entrevista', 'rumo', 'rumoOutro', 'observacoes'].forEach(id => {
+      ['nome', 'data', 'idade', 'discord', 'entrevista', 'rumo', 'rumoOutro', 'observacoes'].forEach(id => {
         document.getElementById(id).value = '';
         if (!aprovacao) localStorage.removeItem(id);
       });
@@ -549,7 +547,6 @@
       const data = formatarData(document.getElementById('data').value.trim());
       const idade = document.getElementById('idade').value.trim();
       const discord = document.getElementById('discord').value.trim();
-      const nomePersonagem = document.getElementById('nomePersonagem').value.trim();
       const entrevista = document.getElementById('entrevista').value.trim();
       const rumoSelect = document.getElementById('rumo').value;
       const rumoOutro = document.getElementById('rumoOutro').value.trim();
@@ -591,7 +588,6 @@
         if (discord) resultadoAprovadosStr.push(`**ID Discord:** ${discord} |<@${discord}>`);
         if (entrevista) resultadoAprovadosStr.push(`**Número da Entrevista:** ${entrevista}`);
         if (rumo) resultadoAprovadosStr.push(`**Rumo:** ${rumo}`);
-        if (nomePersonagem) resultadoAprovadosStr.push(`**Nome do Personagem :** ${nomePersonagem}`);
         if (observacoes) resultadoAprovadosStr.push(`**Observações:** ${observacoes}`);
 
         const resultadoAprovados = document.getElementById('resultadoAprovados');
@@ -604,7 +600,6 @@
         if (discord) resultadoDetalhadoStr.push(`**ID Discord:** ${discord} |<@${discord}>`);
         if (entrevista) resultadoDetalhadoStr.push(`**Número da Entrevista:** ${entrevista}`);
         if (rumo) resultadoDetalhadoStr.push(`**Rumo:** ${rumo}`);
-        if (nomePersonagem) resultadoDetalhadoStr.push(`**Nome do Personagem :** ${nomePersonagem}`);
         resultadoDetalhadoStr.push(`**Observações:** ${observacoes ? observacoes : 'Motivo não informado.'}`); // Sempre incluir motivo na detalhada
 
         const resultadoDetalhado = document.getElementById('resultadoReprovadosDetalhado');
@@ -625,7 +620,6 @@
         data: data,
         idade: idade,
         discord: discord,
-        nomePersonagem: nomePersonagem,
         entrevista: entrevista,
         rumo: rumo,
         observacoes: observacoes,
@@ -769,7 +763,6 @@
           if (e.discord) entry.push(`**ID Discord:** ${e.discord} |<@${e.discord}>`);
           if (e.entrevista) entry.push(`**Número da Entrevista:** ${e.entrevista}`);
           if (e.rumo) entry.push(`**Rumo:** ${e.rumo}`);
-          if (e.nomePersonagem) entry.push(`**Nome do Personagem :** ${e.nomePersonagem}`);
           if (e.observacoes) entry.push(`**Observações:** ${e.observacoes}`);
           texto += entry.join('\n') + '\n\n';
         });
@@ -792,7 +785,6 @@
         entry.push(`**ID Discord:** ${e.discord} |<@${e.discord}>`);
         if (e.entrevista) entry.push(`**Número da Entrevista:** ${e.entrevista}`);
         if (e.rumo) entry.push(`**Rumo:** ${e.rumo}`);
-        if (e.nomePersonagem) entry.push(`**Nome do Personagem :** ${e.nomePersonagem}`);
         if (e.observacoes) entry.push(`**Observações:** ${e.observacoes}`);
         entry.push(`**Status:** ${e.status}`);
         entry.push(`**Salvo em:** ${e.timestamp}`);
