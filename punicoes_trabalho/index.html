@@ -586,6 +586,7 @@
         Faxineiro: '(Faxineiro: calça, sapatos, camiseta e cinto com ferramentas).',
         Lenhador: '(Lenhador: luvas, sapatos, camiseta e calça).',
         Minerador: '(Minerador: luvas, sapatos, colete refletivo, capacete de segurança, calças e camiseta).',
+        Agricultor: '(Agricultor: calça, botas, camiseta e cinto com ferramentas).',
         Motoboy: '(Motoboy: colete de mototaxi, sapatos, bolsa de entregador, jaqueta e capacete).',
         Lixeiro: {
           Roupa: '(Lixeiro: sapato, luvas, colete refletivo, camiseta e calça).',
@@ -646,6 +647,8 @@
           mensagem = `${saudacao}. Estamos registrando uma advertência pelo uso inadequado do uniforme de trabalho. Lembre-se de que é essencial utilizar a vestimenta correta para o serviço que está sendo realizado. Em caso de reincidência, uma punição entrará em vigor. ${detalhes.Minerador}`;
         } else if (prof === 'Motoboy') {
           mensagem = `${saudacao}. Estamos registrando uma advertência pelo uso inadequado do uniforme de trabalho. Lembre-se de que é essencial utilizar a vestimenta correta para o serviço que está sendo realizado. Em caso de reincidência, uma punição entrará em vigor. ${detalhes.Motoboy}`;
+          } else if (prof === 'Agricultor') {
+          mensagem = `${saudacao}. Estamos registrando uma advertência pelo uso inadequado do uniforme de trabalho. Lembre-se de que é essencial utilizar a vestimenta correta para o serviço que está sendo realizado. Em caso de reincidência, uma punição entrará em vigor. ${detalhes.Agricultor}`;
         }
       } else {
         const dataTexto = montarTextoData(data1Input, data2Input);
