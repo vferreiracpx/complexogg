@@ -445,16 +445,12 @@
       <label for="tipoAdvertencia">Tipo de Advertência <span class="tooltip">ⓘ<span class="tooltiptext">Advertência 1: primeira punição.<br>Advertência 2: reincidência, exige reunião.</span></span></label>
       <select id="tipoAdvertencia" onchange="mostrarCamposTipo2(); atualizarAdvertencia();">
         <option value="1">Advertência 1</option>
-        <option value="2">Advertência 2 (Reunião)</option>
+        <option value="2">Advertência 2 (Punição)</option>
       </select>
       <div id="dadosAdvertencia2" class="hidden" style="margin-bottom: 2px;">
-        <div class="inline-group">
-          <label for="tratamento">"O" ou "A"</label>
+          <div class="inline-group">
           <select id="tratamento" onchange="atualizarAdvertencia()">
-            <option value="o">O</option>
-            <option value="a">A</option>
           </select>
-          <label for="nomeStaff">Staff</label>
           <input type="text" id="nomeStaff" placeholder="Nome da Staff" style="max-width:180px;" />
         </div>
         <div class="inline-group">
@@ -653,7 +649,9 @@
       } else {
         const dataTexto = montarTextoData(data1Input, data2Input);
         // AQUI ESTÁ A MUDANÇA SOLICITADA: REMOVIDO O MOTIVO DA MENSAGEM DA ADVERTÊNCIA 2.
-        mensagem = `${saudacao}, você está sendo convidado/a a participar de uma reunião com a Equipe de Suporte. Procure ${tratamento} ${nomeStaff}, para agendar um horário no PRIVADO, ${dataTexto}.`;
+        mensagem = `${saudacao},Você está recebendo sua 2ª advertência. 
+Como consequência, será aplicada uma punição de 24 horas, conforme previsto nas normas internas. 
+Pedimos que reflita sobre sua conduta para evitar medidas disciplinares mais severas no futuro.`;
       }
       document.getElementById('info').setAttribute('data-motivoResumo', motivo);
       document.getElementById('info').innerText = info;
