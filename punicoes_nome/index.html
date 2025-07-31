@@ -252,7 +252,7 @@ complexogg<!DOCTYPE html>
     <form class="painel-form" autocomplete="off" onsubmit="event.preventDefault(); generateReport();">
       <h1>Punição Nome Inadequado</h1>
       <div class="desc">
-        Gere e copie rapidamente o relatório de remoção de Allowlist por nome inadequado.<br>
+        Gere e copie rapidamente o relatório de punição por nome inadequado.<br>
         <span style="color:var(--accent2);font-weight:600;">Preencha os campos</span> e use os botões de copiar!
       </div>
       <label for="discordId">ID Discord:</label>
@@ -285,6 +285,9 @@ complexogg<!DOCTYPE html>
   <div class="footer">
     <img src="https://i.postimg.cc/WzSNyqxY/Jacky-Confuso.png" alt="Imagem" width="150">
     <p>© 2025 - Todos os direitos reservados. Feito com ❤, ajuda de IA e um pouquinho de preguiça por <a href="https://jackymayers.github.io/" target="_blank">Jacky Mayers</a>!</p>
+     <p>Editado por 
+       <a href="https://github.com/vferreiracpx" target="_blank" style="color:#aaa;">vFerreira</a>!
+    </p>
   </div>
   <script>
     // Função para obter a saudação baseada na hora atual
@@ -312,13 +315,16 @@ complexogg<!DOCTYPE html>
       const saudacao = getSaudacao(); // Pega a saudação dinâmica
 
       // Info block - Ajustado para o novo formato
-      let info = `**ID Discord:** ${discordId} | <@${discordId}>\n**ID e Nome do Personagem:** ${characterId} - ${characterName}\n**Motivo:** Nome inadequado\n**Punição:** Remoção de AL`;
+      let info = `**ID Discord:** ${discordId} | <@${discordId}>\n**ID e Nome do Personagem:** ${characterId} - ${characterName}\n**Motivo:** Nome inadequado\n**Punição:** Banido até realizar alteração do nome`;
 
       // Mensagem ID Discord (mantido como o formato anterior que você aprovou para este bloco)
-      let idmsg = `${discordId} | <@${discordId}> - ${characterId} - ${characterName} - Remoção de AL - Nome inadequado.`;
+      let idmsg = `${discordId} | <@${discordId}> - ${characterId} - ${characterName} - Banido até realizar alteração do nome - Nome inadequado.`;
 
       // Mensagem block (longa)
-      let msg = `${saudacao}! Sua Allowlist está sendo removida pelo seguinte motivo: (Nome inadequado). Durante o alinhamento, é informado que o nome deve ser registrável em cartório. Nomes com duplo sentido, apelidos, diminutivos (como Joãozinho, Paulinha), nomes inventados ou com símbolos, repetições de letras ou números fora do padrão não são permitidos. Exemplo de um nome correto com as iniciais maiúsculas (ex: João Silva). Lembrando que o nome deve conter UM nome e até TRÊS sobrenomes. Caso deseje retornar ao servidor, será necessário refazer o processo de Allowlist com um nome válido.Atenciosamente, Equipe de Allowlist – Suporte CPX.XP!`;
+      let msg = `${saudacao}! Você está recebendo uma punição até a regularização do nome junto a um membro da equipe de suporte do COMPLEXO GG, pelo seguinte motivo: (Nome inadequado). Durante o alinhamento, é informado que o nome deve ser registrável em cartório. Nomes com duplo sentido, apelidos, diminutivos (como Joãozinho, Paulinha), nomes inventados, nomes com símbolos, repetições de letras ou números fora do padrão não são permitidos. Exemplo de nome correto com as iniciais maiúsculas: João Silva. Para retornar ao servidor, será necessário regularizar seu nome com o suporte.
+
+Atenciosamente,
+Equipe de Suporte – COMPLEXO GG!`;
 
       document.getElementById("infoBlock").textContent = info;
       document.getElementById("idMsgBlock").textContent = idmsg;

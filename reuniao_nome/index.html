@@ -2,7 +2,7 @@ complexogg<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Marcar Reunião</title>
+  <title>Marcar Troca de Nome</title>
   <link rel="icon" href="https://i.postimg.cc/MG7qzW4x/emote.png" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
@@ -228,9 +228,9 @@ complexogg<!DOCTYPE html>
 <main>
   <div class="card">
     <form class="painel-form" autocomplete="off" onsubmit="event.preventDefault(); gerarMensagem();">
-      <h1>Marcar Reunião</h1>
+      <h1>Marcar Troca de Nome</h1>
       <div class="desc">
-        Gere rapidamente uma mensagem personalizada para convidar alguém à reunião.<br>
+        Gere rapidamente uma mensagem personalizada para convidar alguém a realizar a troca do nome.<br>
         <span style="color:var(--accent2);font-weight:600;">Preencha os campos</span> ao lado e clique em <b>Gerar Mensagem</b>!
       </div>
       <label>Nome do administrador:</label>
@@ -259,6 +259,9 @@ complexogg<!DOCTYPE html>
   <div class="footer">
     <img src="https://i.postimg.cc/WzSNyqxY/Jacky-Confuso.png" alt="Jacky Confuso" />
     <p>© 2025 - Todos os direitos reservados. Feito com ❤, ajuda de IA e um pouquinho de preguiça por <a href="https://jackymayers.github.io/" target="_blank" style="color:#aaa;">Jacky Mayers</a>!</p>
+       <p>Editado por 
+       <a href="https://github.com/vferreiracpx" target="_blank" style="color:#aaa;">vFerreira</a>!
+    </p>
   </div>
   <script>
     // Função para obter a saudação baseada na hora atual
@@ -287,7 +290,7 @@ complexogg<!DOCTYPE html>
       
       const saudacao = getSaudacao(); // Pega a saudação dinâmica (Bom dia, Boa tarde, Boa noite)
 
-      let mensagem = `${saudacao}, você está sendo convidado(a) a participar de uma reunião com a Equipe de Suporte. Procure ${tratamento} ${nome}, para agendar um horário no PRIVADO, `;
+      let mensagem = `${saudacao}, você está sendo convidado(a) a realizar a troca de nome no COMPLEXO GG. Procure ${tratamento} ${nome}, para efetuar a alteração, `;
       const hoje = new Date();
       const amanha = new Date();
       amanha.setDate(hoje.getDate() + 1);

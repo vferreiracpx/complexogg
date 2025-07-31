@@ -397,10 +397,10 @@
         <a href="/complexogg/reuniao_nome/index.html">📅 Marcar Troca de Nome</a>
         <a href="/complexogg/modelos_suporte/index.html">🔄 Modelos Suporte</a>
   </nav>
-<main>
+<main>complexogg
   <div class="card">
     <form class="painel-form" autocomplete="off" onsubmit="event.preventDefault(); gerarRelatorio();">
-      <h1>Punições Serviços XP</h1>
+      <h1>Punições Serviços COMPLEXO GG</h1>
       <div class="desc">
         Gere relatórios de advertências para profissões do servidor. <span style="color:var(--cor-sec);font-weight:600;">Preencha os campos</span> ao lado e veja o texto pronto ao lado direito!
       </div>
@@ -421,7 +421,6 @@
         <option value="Faxineiro">Faxineiro</option>
         <option value="Lenhador">Lenhador</option>
         <option value="Minerador">Minerador</option>
-        <option value="Agricultor">Agricultor</option>
         <option value="Motoboy">Motoboy</option>
         <option value="Lixeiro">Lixeiro</option>
         <option value="Caçador">Caçador</option>
@@ -448,9 +447,13 @@
         <option value="2">Advertência 2 (Punição)</option>
       </select>
       <div id="dadosAdvertencia2" class="hidden" style="margin-bottom: 2px;">
-          <div class="inline-group">
+        <div class="inline-group">
+          <label for="tratamento">"O" ou "A"</label>
           <select id="tratamento" onchange="atualizarAdvertencia()">
+            <option value="o">O</option>
+            <option value="a">A</option>
           </select>
+          <label for="nomeStaff">Staff</label>
           <input type="text" id="nomeStaff" placeholder="Nome da Staff" style="max-width:180px;" />
         </div>
         <div class="inline-group">
@@ -486,6 +489,9 @@
   <div class="footer">
     <img src="https://i.postimg.cc/WzSNyqxY/Jacky-Confuso.png" alt="Jacky Confuso" width="90" />
     <p>2025 - Feito com ❤, ajuda de IA e um pouquinho de preguiça por <a href="https://jackymayers.github.io/" target="_blank">Jacky Mayers</a>!</p>
+     <p>Editado por 
+       <a href="https://github.com/vferreiracpx" target="_blank" style="color:#aaa;">vFerreira</a>!
+    </p>
   </div>
   <script>
     function getSaudacao() {
@@ -582,7 +588,6 @@
         Faxineiro: '(Faxineiro: calça, sapatos, camiseta e cinto com ferramentas).',
         Lenhador: '(Lenhador: luvas, sapatos, camiseta e calça).',
         Minerador: '(Minerador: luvas, sapatos, colete refletivo, capacete de segurança, calças e camiseta).',
-        Agricultor: '(Agricultor: calça, botas, camiseta e cinto com ferramentas).',
         Motoboy: '(Motoboy: colete de mototaxi, sapatos, bolsa de entregador, jaqueta e capacete).',
         Lixeiro: {
           Roupa: '(Lixeiro: sapato, luvas, colete refletivo, camiseta e calça).',
@@ -643,15 +648,11 @@
           mensagem = `${saudacao}. Estamos registrando uma advertência pelo uso inadequado do uniforme de trabalho. Lembre-se de que é essencial utilizar a vestimenta correta para o serviço que está sendo realizado. Em caso de reincidência, uma punição entrará em vigor. ${detalhes.Minerador}`;
         } else if (prof === 'Motoboy') {
           mensagem = `${saudacao}. Estamos registrando uma advertência pelo uso inadequado do uniforme de trabalho. Lembre-se de que é essencial utilizar a vestimenta correta para o serviço que está sendo realizado. Em caso de reincidência, uma punição entrará em vigor. ${detalhes.Motoboy}`;
-          } else if (prof === 'Agricultor') {
-          mensagem = `${saudacao}. Estamos registrando uma advertência pelo uso inadequado do uniforme de trabalho. Lembre-se de que é essencial utilizar a vestimenta correta para o serviço que está sendo realizado. Em caso de reincidência, uma punição entrará em vigor. ${detalhes.Agricultor}`;
         }
       } else {
         const dataTexto = montarTextoData(data1Input, data2Input);
         // AQUI ESTÁ A MUDANÇA SOLICITADA: REMOVIDO O MOTIVO DA MENSAGEM DA ADVERTÊNCIA 2.
-        mensagem = `${saudacao},Você está recebendo sua 2ª advertência. 
-Como consequência, será aplicada uma punição de 24 horas, conforme previsto nas normas internas. 
-Pedimos que reflita sobre sua conduta para evitar medidas disciplinares mais severas no futuro.`;
+        mensagem = `${saudacao}, você está recebendo sua 2ª advertência por uso inadequado de vestimenta ou veículo durante o serviço. Como consequência, uma punição de 24 horas será aplicada por. ${nomeStaff}, ${dataTexto}`;
       }
       document.getElementById('info').setAttribute('data-motivoResumo', motivo);
       document.getElementById('info').innerText = info;
