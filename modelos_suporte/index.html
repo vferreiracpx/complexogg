@@ -504,12 +504,12 @@
                     <div id="fields_banimentoSuporte" class="form-section hidden">
                         <div class="input-group-inline">
                             <div>
-                                <label for="banimento_idPersonagem">ID do Personagem:</label>
+                                <!--<label for="banimento_idPersonagem">ID do Personagem:</label>
                                 <input type="text" id="banimento_idPersonagem" placeholder="Ex: 3456">
                             </div>
                             <div>
                                 <label for="banimento_nomePersonagem">Nome do Personagem:</label>
-                                <input type="text" id="banimento_nomePersonagem" placeholder="Ex: Ana Sombra">
+                                <input type="text" id="banimento_nomePersonagem" placeholder="Ex: Ana Sombra">-->
                             </div>
                         </div>
 
@@ -519,8 +519,8 @@
                         <label for="banimento_motivo">Motivo:</label>
                         <textarea id="banimento_motivo" placeholder="Motivo do banimento"></textarea>
 
-                        <label for="banimento_tempo">Tempo:</label>
-                        <input type="text" id="banimento_tempo" placeholder="Ex: 30 dias / Permantente">
+                        <!--<label for="banimento_tempo">Tempo:</label>
+                        <input type="text" id="banimento_tempo" placeholder="Ex: 30 dias / Permantente">-->
 
                         <label for="banimento_provas">Provas:</label>
                         <input type="text" id="banimento_provas" placeholder="URL do link das provas">
@@ -756,10 +756,10 @@
                     fields.tempo = getFieldValue('banimento_tempo');
                     fields.provas = getFieldValue('banimento_provas');
 
-                    relatorio = `** ID e Nome do Personagem:** ${fields.idPersonagem} - ${fields.nomePersonagem}\n`;
-                    relatorio += `** ID Discord:** ${fields.idDiscord}\n`;
+                    //relatorio = `** ID e Nome do Personagem:** ${fields.idPersonagem} - ${fields.nomePersonagem}\n`;
+                    relatorio += `** ID Discord:** <@${fields.idDiscord}>\n`;
                     relatorio += `** Motivo:** ${fields.motivo}\n`;
-                    relatorio += `** Tempo:** ${fields.tempo}\n`;
+                    //relatorio += `** Tempo:** ${fields.tempo}\n`;
                     relatorio += `** Provas:** ${fields.provas}`;
                     break;
 
